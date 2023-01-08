@@ -72,7 +72,7 @@ class ContactFormState extends State<ContactForm> {
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Sending Email')),
+                      const SnackBar(content: Text('Enviando...')),
                     );
                   }
                 },
