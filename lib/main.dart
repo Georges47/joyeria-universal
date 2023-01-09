@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:joyeria_universal/scaffold/desktop_scaffold.dart';
 import 'package:joyeria_universal/scaffold/mobile_scaffold.dart';
 import 'package:joyeria_universal/utils.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 void main() {
+  setPathUrlStrategy();
   runApp(const MyApp());
 }
 
