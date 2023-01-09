@@ -28,7 +28,7 @@ class ContactFormState extends State<ContactForm> {
   Widget build(BuildContext context) {
     return (
       SizedBox(
-        width: screenWidth(context) / 2.5,
+        width: isMobile(context) ? screenWidth(context) / 1.25 : screenWidth(context) / 2.5,
         child: Form(
           key: _formKey,
           child: Column(

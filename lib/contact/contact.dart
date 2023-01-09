@@ -1,8 +1,7 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:joyeria_universal/contact/contact_form.dart';
+import 'package:joyeria_universal/contact/contact_message.dart';
 import 'package:joyeria_universal/utils.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Contact extends StatelessWidget {
 
@@ -12,49 +11,10 @@ class Contact extends StatelessWidget {
   Widget build(BuildContext context) {
     return (
       SizedBox(
-        height: screenHeight(context),
+        height: screenHeight(context) - appBarHeight(),
         child: Column(
           children: [
-            Container(
-              width: double.infinity,
-              height: 150,
-              color: Colors.grey,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    'Utiliza el siguiente formulario para enviarnos un correo electrónico.',
-                    style: TextStyle(
-                      fontSize: 24.0,
-                      color: Colors.white,
-                    ),
-                  ),
-                  RichText(
-                    text: TextSpan(
-                      children: [
-                        const TextSpan(
-                          text: 'También nos puedes llamar al siguiente número ',
-                          style: TextStyle(
-                            fontSize: 24.0,
-                            color: Colors.white,
-                          ),
-                        ),
-                        TextSpan(
-                          text: '+58 416 5611 797',
-                          style: const TextStyle(
-                            fontSize: 24.0,
-                            color: Colors.white,
-                          ),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () { launchUrl(Uri(scheme: 'tel', path: '+584165611797'));
-                          },
-                        ),
-                      ]
-                    )
-                  ),
-                ]
-              ),
-            ),
+            const ContactMessage(),
             CustomPaint(
               size: const Size(double.infinity, 80.0),
               painter: PaintTriangle(backgroundColor: Colors.grey),
@@ -69,7 +29,7 @@ class Contact extends StatelessWidget {
                     style: TextStyle(fontSize: 18.0),
                   ),
                   Text(
-                    '    \u2022 No vendemos oro',
+                    '    \u2022 No compramos oro',
                     style: TextStyle(fontSize: 18.0),
                   ),
                 ],

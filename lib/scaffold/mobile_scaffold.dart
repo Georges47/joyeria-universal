@@ -19,7 +19,7 @@ class MobileScaffold extends StatelessWidget {
         elevation: 0,
       ),
       drawer: LeftDrawer(
-        sections: sections(_scrollController, screenHeight(context)),
+        sections: sections(_scrollController, screenHeight(context) - appBarHeight()),
       ),
       body: Content(scrollController: _scrollController,),
     );
