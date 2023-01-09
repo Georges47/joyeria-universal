@@ -30,7 +30,7 @@ class DrawerIcons extends StatelessWidget {
             ),
             if(isMobile(context))
               IconButton(
-                icon: const Icon(Icons.whatsapp),
+                icon: const FaIcon(FontAwesomeIcons.whatsapp),
                 iconSize: 32.0,
                 onPressed: () {
                   _launchUrl(Uri(scheme: 'https', path: 'wa.me/584165611797')); // Mobile
