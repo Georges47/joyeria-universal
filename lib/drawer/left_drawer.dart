@@ -10,17 +10,16 @@ class LeftDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return(
       Drawer(
-        elevation: 0.0,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                // color: Colors.blue,
+            DrawerHeader(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/logo_name.png'),
+                ),
               ),
-              child: Center(
-                  child: Text('Joyería Universal')
-              ),
+              child: Container(),
             ),
             ...sections,
             const Spacer(),

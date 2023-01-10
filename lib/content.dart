@@ -34,8 +34,9 @@ class Content extends StatelessWidget {
             ),
             const Contact(),
             SizedBox(
-              height: screenHeight(context) - appBarHeight(),
+              height: screenHeight(context) - (isMobile(context) ? appBarHeight() : 0.0),
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Location(),
                   const Footer(),

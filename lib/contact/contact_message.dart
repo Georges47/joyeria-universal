@@ -7,7 +7,7 @@ class ContactMessage extends StatelessWidget {
 
   TextStyle _textStyle(BuildContext context) {
     return TextStyle(
-      fontSize: isMobile(context) ? 18.0 : 24.0,
+      fontSize: isMobile(context) ? 18.0 : Theme.of(context).textTheme.headline6?.fontSize,
       color: Colors.white,
     );
   }
@@ -16,10 +16,10 @@ class ContactMessage extends StatelessWidget {
   Widget build(BuildContext context) {
     return(
       Container(
-        padding: EdgeInsets.symmetric(horizontal: isMobile(context) ? 8.0 : 0.0),
+        padding: EdgeInsets.only(left: isMobile(context) ? 8.0 : 0.0, right: isMobile(context) ? 8.0 : 0.0, top: 24.0),
         width: double.infinity,
         height: 150,
-        color: Colors.grey,
+        color: Theme.of(context).colorScheme.primary,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -34,7 +34,7 @@ class ContactMessage extends StatelessWidget {
                   ),
                   TextSpan(
                     text: '+58 416 5611 797',
-                    style: _textStyle(context).merge(const TextStyle(color: Colors.blueGrey)),
+                    style: _textStyle(context).merge(const TextStyle(color: Colors.yellow)),
                     recognizer: TapGestureRecognizer()
                       ..onTap = () => customLaunchUrl(Uri(scheme: 'tel', path: '+584165611797')),
                   ),

@@ -17,7 +17,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Joyería Universal',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: materialColor(0xFF5e212b),
+        brightness: Brightness.light,
+        textTheme: const TextTheme(
+          headline6: TextStyle(fontSize: 28.0),
+          bodyText1: TextStyle(fontSize: 22.0),
+        ),
       ),
       home: const MyHomePage(),
     );

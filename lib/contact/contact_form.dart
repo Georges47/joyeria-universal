@@ -10,12 +10,15 @@ class ContactForm extends StatefulWidget {
 
 class ContactFormState extends State<ContactForm> {
   final _formKey = GlobalKey<FormState>();
+  final double verticalFieldSpace = 24.0;
+  final double horizontalFieldSpace = 24.0;
 
   Widget _textFormField(String label) {
     return (
       Expanded(
         child: TextFormField(
           decoration: InputDecoration(
+            labelStyle: Theme.of(context).textTheme.bodyText1?.merge(const TextStyle(color: Colors.grey, fontWeight: FontWeight.w100)),
             label: Text(label),
             border: const OutlineInputBorder(),
           ),
@@ -28,7 +31,7 @@ class ContactFormState extends State<ContactForm> {
   Widget build(BuildContext context) {
     return (
       SizedBox(
-        width: isMobile(context) ? screenWidth(context) / 1.25 : screenWidth(context) / 2.5,
+        width: isMobile(context) ? screenWidth(context) / 1.25 : screenWidth(context) / 2.25,
         child: Form(
           key: _formKey,
           child: Column(
@@ -38,36 +41,36 @@ class ContactFormState extends State<ContactForm> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   _textFormField('Nombre*'),
-                  const SizedBox(width: 24.0),
+                  SizedBox(width: horizontalFieldSpace),
                   _textFormField('Apellido*'),
                 ],
               ),
-              const SizedBox(height: 16.0),
+              SizedBox(height: verticalFieldSpace),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   _textFormField('Correo*'),
-                  const SizedBox(width: 24.0),
+                  SizedBox(width: horizontalFieldSpace),
                   _textFormField('Teléfono'),
                 ],
               ),
-              const SizedBox(height: 16.0),
+              SizedBox(height: verticalFieldSpace),
               TextFormField(
-                decoration: const InputDecoration(
-                  label: Text('¿Qué podemos hacer por ti?'),
+                decoration: InputDecoration(
+                  label: const Text('¿Qué podemos hacer por ti?'),
+                  labelStyle: Theme.of(context).textTheme.bodyText1?.merge(const TextStyle(color: Colors.grey, fontWeight: FontWeight.w100)),
                   alignLabelWithHint: true,
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
                 ),
                 minLines: 3,
                 maxLines: 3,
               ),
-              const SizedBox(height: 16.0,),
+              SizedBox(height: verticalFieldSpace),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.grey,
-                  textStyle: const TextStyle(
-                    fontSize: 18.0,
-                  )
+                  padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
+                  backgroundColor: Theme.of(context).colorScheme.primary,
+                  textStyle: Theme.of(context).textTheme.bodyText1
                 ),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
