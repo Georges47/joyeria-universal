@@ -97,11 +97,11 @@ class DesktopContent extends StatelessWidget {
                   const SizedBox(height: 16.0,),
                   const Text('Ubicación', style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),),
                   const SizedBox(height: 16.0,),
-                  const Text('Centro Comercial Lago Mall, Nivel Plaza', style: TextStyle(fontSize:18.0 )),
+                  const SelectableText('Centro Comercial Lago Mall, Nivel Plaza', style: TextStyle(fontSize:18.0 )),
                   const SizedBox(height: 8.0,),
-                  const Text('Avenida El Milagro, Maracaibo 4002', style: TextStyle(fontSize:18.0 )),
+                  const SelectableText('Avenida El Milagro, Maracaibo 4002', style: TextStyle(fontSize:18.0 )),
                   const SizedBox(height: 8.0,),
-                  const Text('Zulia, Venezuela', style: TextStyle(fontSize:18.0 )),
+                  const SelectableText('Zulia, Venezuela', style: TextStyle(fontSize:18.0 )),
                   const Spacer(),
                   const Text('Horarios', style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),),
                   const SizedBox(height: 16.0,),
@@ -192,7 +192,7 @@ class MobileContent extends StatelessWidget {
           children: [
             const Text('Nuestra Ubicación', style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),),
             const SizedBox(height: 16.0,),
-            const Text(
+            const SelectableText(
               'Centro Comercial Lago Mall, Nivel Plaza. Avenida El Milagro, Maracaibo 4002. Zulia, Venezuela',
               textAlign: TextAlign.center,
             ),

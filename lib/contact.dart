@@ -47,7 +47,7 @@ class Contact extends StatelessWidget {
                   ),
                 ),
                 TableCell(
-                  child: Text(
+                  child: SelectableText(
                     '+58 416-5611797',
                     style: TextStyle(fontSize: 24.0),
                   )
@@ -71,7 +71,7 @@ class Contact extends StatelessWidget {
                   ),
                 ),
                 TableCell(
-                  child: Text(
+                  child: SelectableText(
                     '@joyeriauniversalmcbo',
                     style: TextStyle(fontSize: 24.0),
                   ),
@@ -93,7 +93,7 @@ class Contact extends StatelessWidget {
                   ),
                 ),
                 TableCell(
-                  child: Text(
+                  child: SelectableText(
                     'joyeríauniversal@outlook.com',
                     style: TextStyle(fontSize: 24.0))
                 ),
@@ -126,35 +126,69 @@ class Contact extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            FaIcon(
-              FontAwesomeIcons.whatsapp,
-              size: 36.0
-            ),
-            SizedBox(height: 4.0,),
-            Text(
-              '+58 416-5611797',
-              style: TextStyle(fontSize: 20.0), textAlign: TextAlign.center,
-            ),
-            Divider(height: 64.0,),
-            Center(
-              child: FaIcon(
-                FontAwesomeIcons.instagram,
-                size: 36.0,
+          children: [
+            InkWell(
+              onTap: () {
+                customLaunchUrl(Uri(scheme: 'https', path: 'wa.me/584165611797'));
+              },
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: const [
+                  Center(
+                    child: FaIcon(
+                      FontAwesomeIcons.whatsapp,
+                      size: 36.0
+                    ),
+                  ),
+                  SizedBox(height: 4.0,),
+                  SelectableText(
+                    '+58 416-5611797',
+                    style: TextStyle(fontSize: 20.0), textAlign: TextAlign.center,
+                  ),
+                ],
               ),
             ),
-            Text(
-              '@joyeriauniversalmcbo',
-              style: TextStyle(fontSize: 20.0), textAlign: TextAlign.center,
+            const Divider(height: 64.0,),
+            InkWell(
+              onTap: () {
+                customLaunchUrl(Uri.parse('https://www.instagram.com/joyeriauniversalmcbo/'));
+              },
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: const [
+                  Center(
+                    child: FaIcon(
+                        FontAwesomeIcons.instagram,
+                        size: 36.0
+                    ),
+                  ),
+                  SelectableText(
+                    '@joyeriauniversalmcbo',
+                    style: TextStyle(fontSize: 20.0), textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
             ),
-            Divider(height: 64.0,),
-            Icon(
-              Icons.mail_outline,
-              size: 36.0
-            ),
-            Text(
-              'joyeríauniversal@outlook.com',
-              style: TextStyle(fontSize: 20.0), textAlign: TextAlign.center,
+            const Divider(height: 64.0,),
+            InkWell(
+              onTap: () {
+                customLaunchUrl(Uri(scheme: 'mailto', path: 'joyeríauniversal@outlook.com'));
+              },
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: const [
+                  Center(
+                    child: Icon(
+                      Icons.mail_outline,
+                      size: 36.0
+                    ),
+                  ),
+                  SelectableText(
+                    'joyeríauniversal@outlook.com',
+                    style: TextStyle(fontSize: 20.0), textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
             ),
           ],
         ),

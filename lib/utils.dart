@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 double screenHeight(BuildContext context) {
   return MediaQuery.of(context).size.height;
@@ -7,6 +8,12 @@ double screenHeight(BuildContext context) {
 
 double screenWidth(BuildContext context) {
   return MediaQuery.of(context).size.width;
+}
+
+Future<void> customLaunchUrl(url) async {
+  if (!await launchUrl(url)) {
+    throw 'Could not launch $url';
+  }
 }
 
 List<String> weekDays() {
