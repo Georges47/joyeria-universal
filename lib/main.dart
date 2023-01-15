@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:joyeria_universal/scaffold/desktop_scaffold.dart';
-import 'package:joyeria_universal/scaffold/mobile_scaffold.dart';
-import 'package:joyeria_universal/utils.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:joyeria_universal/content.dart';
 import 'package:url_strategy/url_strategy.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   setPathUrlStrategy();
+  initializeDateFormatting('es', null);
   runApp(const MyApp());
 }
 
@@ -17,28 +18,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Joyería Universal',
       theme: ThemeData(
-        primarySwatch: materialColor(0xFF5e212b),
-        brightness: Brightness.light,
-        textTheme: const TextTheme(
-          headline6: TextStyle(fontSize: 28.0),
-          bodyText1: TextStyle(fontSize: 22.0),
-        ),
+        fontFamily: GoogleFonts.lato().fontFamily,
       ),
-      home: const MyHomePage(),
+      home: const Content(),
     );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return isMobile(context) ? MobileScaffold() : DesktopScaffold();
   }
 }

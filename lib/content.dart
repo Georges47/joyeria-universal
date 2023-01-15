@@ -1,51 +1,43 @@
-import 'package:flutter/cupertino.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/material.dart';
+import 'package:joyeria_universal/background.dart';
+import 'package:joyeria_universal/location.dart';
 import 'package:joyeria_universal/utils.dart';
 
-import 'contact/contact.dart';
-import 'footer/footer.dart';
-import 'location/location.dart';
+import 'contact.dart';
+import 'home.dart';
 
-class Content extends StatelessWidget {
-  const Content({super.key, required this.scrollController});
+class Content extends StatefulWidget {
+  const Content({super.key});
 
-  final ScrollController scrollController;
+  @override
+  State<StatefulWidget> createState() => _ContentState();
+}
+
+class _ContentState extends State<Content> {
+  final CarouselController _carouselController = CarouselController();
 
   @override
   Widget build(BuildContext context) {
-    return (
-      SingleChildScrollView(
-        controller: scrollController,
-        child: Column(
-          children: [
-            Container(
-              height: screenHeight(context),
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/background2.jpg'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: const Center(
-                child: Text(
-                  "Joyería Universal",
-                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-                )
-              ),
-            ),
-            const Contact(),
-            SizedBox(
-              height: screenHeight(context) - (isMobile(context) ? appBarHeight() : 0.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Location(),
-                  const Footer(),
-                ],
-              ),
-            ),
+    return Stack(
+      children: [
+        const Background(),
+        CarouselSlider(
+          options: CarouselOptions(
+            viewportFraction: 1,
+            height: screenHeight(context),
+            initialPage: 1,
+            enableInfiniteScroll: false,
+            scrollPhysics: const NeverScrollableScrollPhysics()
+          ),
+          carouselController: _carouselController,
+          items: [
+            Contact(carouselController: _carouselController),
+            Home(carouselController: _carouselController),
+            Location(carouselController: _carouselController),
           ],
         ),
-      )
+      ]
     );
   }
 }
