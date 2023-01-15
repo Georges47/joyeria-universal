@@ -127,8 +127,8 @@ class Contact extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            Icon(
-              Icons.whatsapp_outlined,
+            FaIcon(
+              FontAwesomeIcons.whatsapp,
               size: 36.0
             ),
             SizedBox(height: 4.0,),
