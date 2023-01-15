@@ -39,9 +39,11 @@ class Contact extends StatelessWidget {
             TableRow(
               children: [
                 TableCell(
-                  child: Icon(
-                    Icons.whatsapp_outlined,
-                    size: 36.0
+                  child: Center(
+                    child: FaIcon(
+                      FontAwesomeIcons.whatsapp,
+                      size: 36.0
+                    ),
                   ),
                 ),
                 TableCell(
