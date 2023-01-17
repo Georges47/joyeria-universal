@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:joyeria_universal/background.dart';
-import 'package:joyeria_universal/location.dart';
+import 'package:joyeria_universal/location/location.dart';
 import 'package:joyeria_universal/utils.dart';
 
 import 'contact.dart';
