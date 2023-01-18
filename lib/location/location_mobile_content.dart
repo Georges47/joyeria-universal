@@ -30,7 +30,7 @@ class LocationMobileContent extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('Nuestra Ubicación', style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),),
+                const Text('Ubicación', style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),),
                 const SizedBox(height: 16.0,),
                 const SelectableText(
                   'Centro Comercial Lago Mall, Nivel Plaza. Avenida El Milagro, Maracaibo 4002. Zulia, Venezuela',
