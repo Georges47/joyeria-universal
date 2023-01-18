@@ -80,9 +80,14 @@ class Location extends StatelessWidget {
               ),
             ),
             Align(
-              alignment: screenWidth(context) > 1000 ? Alignment.centerLeft : Alignment.topLeft,
+              alignment: screenWidth(context) > 1000 ?
+                Alignment.centerLeft :
+                Alignment.topLeft,
               child: Padding(
-                padding: EdgeInsets.only(left: 32.0, top: screenWidth(context) > 1000 ? 72.0 : 32.0),
+                padding: EdgeInsets.only(
+                  left: 32.0,
+                  top: screenWidth(context) > 1000 ? 0.0 : 32.0
+                ),
                 child: IconButton(
                   iconSize: 32.0,
                   icon: const Icon(

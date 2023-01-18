@@ -4,7 +4,7 @@ import 'package:joyeria_universal/background.dart';
 import 'package:joyeria_universal/location/location.dart';
 import 'package:joyeria_universal/utils.dart';
 
-import 'contact.dart';
+import 'contact/contact.dart';
 import 'home.dart';
 
 class Content extends StatefulWidget {
